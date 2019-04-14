@@ -20,6 +20,11 @@ from datetime import datetime, timedelta
 #Last LPQ game
 #Slot analysis - where people put items
 
+#TODO
+#use command
+#pipreqs . --force
+#to update requirements
+
 #public enum MatchLaneType : int
 #    {
 #        Unknown = -1,
@@ -233,6 +238,9 @@ class FileModifiedHandler(FileSystemEventHandler):
         self.file_name = file_name
         self.callback = callback
 
+        if not os.path.exists(self.path):
+            raise FileNotFoundError('{} was not found in {}'.format(self.file_name, self.path))
+
         # set observer to watch for changes in the directory
         self.observer = Observer()
         self.observer.schedule(self, path, recursive=False)
@@ -360,6 +368,7 @@ if __name__ == '__main__':
 
     if not args.server_log:
         #TODO: Load config
+        #TODO: Add Windows, Mac path
         args.server_log = default_dir
 
     if 'immediate' in args.DEBUG:
