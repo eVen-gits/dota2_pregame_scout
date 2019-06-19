@@ -4,4 +4,4 @@ Core functional in console.
 
 UI was work in progress.
 
-Discontinued, because Valve forced Stratz.com to hide history of accounts that have shared history disabled ingame.
+Discontinued, because Valve forced Stratz.com to hide history of accounts that have shared history disabled ingame. Planed to be FOSS when completed.
